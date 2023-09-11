@@ -24,6 +24,9 @@ const handleUserInput = (event) => {
 
   return (
     <>
+    <div className="header">
+      <h1>Space X launches</h1>
+    </div>
     <Launches></Launches>
     {/* <RickAndMortyChars></RickAndMortyChars> */}
       {/* <Text name={name} country={country} /> */}
