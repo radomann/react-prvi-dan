@@ -67,3 +67,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.light *{
+  transition: all 0.3s;
+
+}
+
+.dark *{
+  background-color: black;
+  color: white;
+  transition: all 0.3s;
+}

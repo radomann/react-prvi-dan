@@ -1,51 +1,52 @@
-import { useState } from "react";
-import { RickAndMortyChars } from "./components/RickAndMortyChars";
-import { Launches } from "./components/Launches";
-import { Text } from "./components/Text";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useState } from 'react'
+import { RickAndMortyCharacters } from './components/RickAndMortyCharacters'
+
+import './App.css'
+import { Counter } from './components/reducerDemo'
+import { RefDemo } from './components/refDemo'
+import { ForwRefDemo } from './components/forwardRefDemo'
+import { ThemeSwitcher } from './components/ThemeSwitcher'
+import { ThemeContext } from './contexts/ThemeContext'
+import { Toolbar } from './components/Toolbar'
+
+const {Provider} = ThemeContext
 
 function App() {
-  const name = "Nenad";
-  const country = "PL";
+  const [count, setCount] = useState(0)
+  const [input, setInput] = useState('dsaasd')
 
-  const [count, setCount] = useState(0);
+  const handleUserInput = (event)=>{
+    
+    console.log(event.target.value);
+    setInput(event.target.value)
+  }
 
-  const [input, setInput] = useState('');
+  return <><Provider value='dark' >
 
-const handleUserInput = (event) => {
-  const text = event.target.value;
-  let newText = '';
-  newText = text.replace(/[aA]+/, '');
-  // newText = text.replace('a', '');
-  setInput(newText);
-}
+  </Provider>
+  <Toolbar />
 
-  return (
-    <>
-    <div className="header">
-      <h1>Space X launches</h1>
-    </div>
-    <Launches></Launches>
-    {/* <RickAndMortyChars></RickAndMortyChars> */}
-      {/* <Text name={name} country={country} /> */}
-      {/* <button onClick={() => setCount(count + 1)}>Click me {count}</button> */}
-      {/* <div><h1
-      className="first-h1"
-      style={{ backgroundColor: "lightsalmon", fontSize: "25px" }}
-    >
-      Cao DevLab React
-    </h1>
-    <h2 onClick={() => console.log("Cao")}>
-      {name} <span>Miks</span> -{" "}
-      <span style={{ fontStyle: "italic" }}>{country}</span>
-    </h2>
-    <p dangerouslySetInnerHTML={{ __html: "<b>Ponedjeljak</b>" }}></p></div> */}
-
-    {/* <input name='test' value={input} onChange={handleUserInput} /> */}
-    </>
-  );
+  </> 
+  //<ThemeSwitcher /> 
+  //<ForwRefDemo /> 
+  // <RefDemo />
+  // <Counter /> 
+  // <RickAndMortyCharacters/>
+    /* <>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={(event) => console.log(event)}>
+          count is {count}
+        </button>
+        <p style={{ backgroundColor: "limegreen" }}>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+      <input name='test' value={input} placeholder='Enter text' onChange={handleUserInput} />
+    </> */
 }
 
 export default App;

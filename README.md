@@ -1,5 +1,3 @@
-There's some newbie code for fetching and displaying SpaceX launching list in
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
