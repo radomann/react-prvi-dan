@@ -17,7 +17,7 @@ export const Launches = () => {
 
     useEffect(() => {
         handleFetchLaunches();
-    })
+    }, [])
 
     return <>
         <div className="content-wrapper">

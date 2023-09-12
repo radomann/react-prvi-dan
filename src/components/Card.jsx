@@ -10,7 +10,7 @@
 
 export const Card = ({missionName, launchSuccess, launchDate, details, links}) => {
     const localDateFormat = new Date(launchDate).toLocaleString();
-
+    console.log(missionName);
     return <>
   <div className="launches-card">
     <img src={links.mission_patch} alt="" className="launches-card__image"/>
